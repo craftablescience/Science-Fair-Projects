@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Cat Feeder</title>
+<style>
+html {
+    height: 100%;
+	background-image: linear-gradient(white,blue);
+}
+
+body {
+    font-family: Roboto, Calibri;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+	width: 90%;
+}
+
+#header {
+    font-size: 48px;
+    background-color: blue;
+	color: white;
+	text-align: center;
+	border-radius: 0px 0px 15px 15px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.bundle {
+    text-align: center;
+	display: inline-block;
+	background-color: blue;
+	color: white;
+	border-radius: 15px;
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+}
+
+.bundle label {
+    display: inline-block;
+}
+
+.bundle input {
+    display: inline-block;
+}
+
+#update {
+    padding: 20px 20px 20px 20px;
+	width: 100%;
+	border-radius: 15px;
+	border-style: solid;
+	border-color: blue;
+	background-color: blue;
+	border-width: 10px;
+	color: white;
+	font-size: 36px;
+}
+
+#update:active {
+	border-color: darkblue;
+}
+
+p {
+    font-size: 32px;
+}
+
+label {
+    font-size: 32px;
+    padding-right: 10px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">Cat Feeder Controls</div>
+
+<form method="POST">
+<br/><br/>
+<div class="bundle"><label>Servo Speed (force):</label for="speed"><input type="number" name="speed" step="5" min="100" max="255" value="150"></div>
+<br/><br/>
+<div class="bundle"><label>Dispensing Amount (motor length):</label for="length"><input type="number" name="length" step="0.1" min="0.5" max="2.0" value="2.0"></div>
+<br/><br/>
+<div class="bundle"><label>When to Dispense (hours):</label for="time"><input type="number" name="time" step="0.5" min="2" max="48" value="12"></div>
+<br/><br/>
+<input id="update" name="update" type="submit" value="Update">
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href="/dispenseNow" class="button">Dispense Now (only use in emergency)</a>
+
+</body>
+
+</html>
