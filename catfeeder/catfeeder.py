@@ -1,5 +1,5 @@
 from BrickPi import *
-import pygame, time, datetime
+import time, datetime
 from flask import Flask, request
 
 pygame.init()
@@ -10,11 +10,6 @@ app = Flask(__name__)
 
 class CatFeeder(object):
     def __init__(self, motorSpeed, motorLength):
-        self.mix_disp_product = pygame.mixer.Sound("dispensing_product.wav")
-        self.mix_disp_product.set_volume(0.25)
-        self.mix_resting = pygame.mixer.Sound("resting.wav")
-        self.mix_resting.set_volume(0.25)
-        
         self.motorSpeed = motorSpeed
         self.motorLength = motorLength
 
@@ -36,8 +31,6 @@ class CatFeeder(object):
         return self.motorLength
 
     def dispense(self):
-        self.mix_disp_product.play()
-        print(self.motorLength)
         BrickPi.MotorSpeed[PORT_B] = self.motorSpeed
         ot = time.time()
         count = time.time() - ot
@@ -64,9 +57,6 @@ class CatFeeder(object):
             count = time.time() - ot
         BrickPi.MotorSpeed[PORT_B] = 0
         BrickPiUpdateValues()
-        self.mix_resting.play()
-        print("done")
-
 
 catfeeder = CatFeeder(255,4.0)
 
