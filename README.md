@@ -1,2 +1,2 @@
-# Automated Cat Feeder
-For the Science Fair of 2019! Requires the `flask`, `requests`, and `pygame` Python libraries, and a BrickPi installation.
+#### Science Fair 2019 -- Automated Cat Feeder
+Requires the `flask`, `requests`, and `pygame` Python libraries, and a BrickPi installation.
