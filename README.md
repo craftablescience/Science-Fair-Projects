@@ -1,4 +1,4 @@
-### 2017: Reaction Time Calculator
+### 2016: Reaction Time Calculator
 Requires the `plotly` Python library, a `plot.ly` account, and a Raspberry Pi 2 with a SenseHAT.
 
 ### 2019: Automated Cat Feeder
